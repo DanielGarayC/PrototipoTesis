@@ -1,0 +1,12 @@
+{
+  "project_id": "ANDAHUAYLILLAS",
+  "gateway_id": "GW-01",
+  "file_id": "20260928T232950_GW-01",
+  "filename": "dataPrueba.dxd",
+  "event_type": "periodic",
+  "sequence_number": 1,
+  "capture_timestamp": "2026-09-28T23:29:50.649472-05:00",
+  "file_size": 10106880,
+  "sha256": "fffea767cf3f736300edad202cd7d838b9f86c47cb2ba01daac0f62ee55e780c",
+  "expected_interval_seconds": 3600
+}

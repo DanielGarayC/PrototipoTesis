@@ -1,0 +1,10 @@
+{
+  "project_id": "PRJ-ANDA-001",
+  "gateway_id": "GW-ANDA-01",
+
+  "heartbeat_url": "http://127.0.0.1:8080/api/v1/gateways/heartbeat",
+
+  "heartbeat_interval_seconds": 10,
+
+  "queue_directory": "C:/Users/Daniel/Downloads/queue"
+}

@@ -1,0 +1,14 @@
+{
+  "GW-ANDA-01": {
+    "project_id": "PRJ-ANDA-001",
+    "gateway_id": "GW-ANDA-01",
+    "sent_at": "2026-09-30T04:41:56.530349+00:00",
+    "hostname": "Daniel",
+    "cpu_percent": 57.3,
+    "ram_percent": 80.1,
+    "disk_percent": 70.36,
+    "backlog": 1,
+    "last_file": "dataPrueba.dxd",
+    "received_at": "2026-09-30T04:41:57.045093+00:00"
+  }
+}
