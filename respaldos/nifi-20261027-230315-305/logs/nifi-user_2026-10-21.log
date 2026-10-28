@@ -1,0 +1,3 @@
+2026-10-21 00:31:28,477 INFO [main] o.a.n.a.single.user.SingleUserAuthorizer Initializing Authorizer
+2026-10-21 00:31:28,555 INFO [main] o.a.n.a.single.user.SingleUserAuthorizer Configuring Authorizer
+2026-10-21 00:31:39,239 INFO [main] o.a.n.w.s.c.KeyPairGeneratorConfiguration Configured Key Pair Algorithm [Ed25519] for JSON Web Signatures

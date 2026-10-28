@@ -1,0 +1,4 @@
+2026-10-27 03:27:22,740 INFO [main] o.a.n.a.single.user.SingleUserAuthorizer Initializing Authorizer
+2026-10-27 03:27:22,784 INFO [main] o.a.n.a.single.user.SingleUserAuthorizer Configuring Authorizer
+2026-10-27 03:27:38,086 INFO [main] o.a.n.w.s.c.KeyPairGeneratorConfiguration Configured Key Pair Algorithm [Ed25519] for JSON Web Signatures
+2026-10-27 03:58:53,262 INFO [NiFi Web Server-126] o.a.n.w.a.c.ValidationExceptionMapper org.apache.nifi.controller.exception.ValidationException: 1 validation error: Cannot change the destination of connection because the current destination is running. Returning Bad Request response.

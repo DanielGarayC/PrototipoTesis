@@ -1,0 +1,63 @@
+services:
+  nifi:
+    image: apache/nifi:2.7.2
+    container_name: nifi_tesis
+    ports:
+      - "8443:8443"
+    environment:
+      - SINGLE_USER_CREDENTIALS_USERNAME=admin
+      - SINGLE_USER_CREDENTIALS_PASSWORD=NiFiPassword123
+    volumes:
+      # Aquí NiFi guarda su configuración y el diseño de los Process Groups
+      - ./nifi-conf:/opt/nifi/nifi-current/conf
+      # Carpetas de datos: staging, convertidos, cuarentena, por proyecto
+      - ./data:/data
+      # Scripts propios
+      - ./scripts:/opt/scripts
+    restart: unless-stopped
+  mysql:
+    image: mysql:8.4
+    container_name: mysql_tesis
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${TESIS_MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: tesis_lip
+      MYSQL_USER: tesis_app
+      MYSQL_PASSWORD: ${TESIS_MYSQL_APP_PASSWORD}
+      TZ: UTC
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_0900_ai_ci", "--default-time-zone=+00:00"]
+    ports:
+      - "127.0.0.1:3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 60s
+  central:
+    build: ./central
+    container_name: modulo_central_tesis
+    restart: unless-stopped
+    environment:
+      DB_HOST: mysql
+      DB_PORT: "3306"
+      DB_NAME: tesis_lip
+      DB_USER: tesis_app
+      DB_PASSWORD: ${TESIS_MYSQL_APP_PASSWORD}
+    ports:
+      - "127.0.0.1:8001:8000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=10).close()"]
+      interval: 30s
+      timeout: 12s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  mysql_data:

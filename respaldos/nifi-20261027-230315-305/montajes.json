@@ -1,0 +1,106 @@
+﻿[
+    {
+        "Type":  "bind",
+        "Source":  "C:\\Users\\Daniel\\Desktop\\Uni\\PrototipoTesis\\Docker\\PrototipoTesis\\nifi-conf",
+        "Destination":  "/opt/nifi/nifi-current/conf",
+        "Mode":  "rw",
+        "RW":  true,
+        "Propagation":  "rprivate"
+    },
+    {
+        "Type":  "volume",
+        "Name":  "e3ce6b024e002a401570263647b0d86ea7983f38b7e3937100dcfc2e261a35d3",
+        "Source":  "/var/lib/docker/volumes/e3ce6b024e002a401570263647b0d86ea7983f38b7e3937100dcfc2e261a35d3/_data",
+        "Destination":  "/opt/nifi/nifi-current/provenance_repository",
+        "Driver":  "local",
+        "Mode":  "",
+        "RW":  true,
+        "Propagation":  ""
+    },
+    {
+        "Type":  "volume",
+        "Name":  "2c81b9572290c20740f9acb19a47cd5a4c5edc5ef57b70f081b80e21c7fb6919",
+        "Source":  "/var/lib/docker/volumes/2c81b9572290c20740f9acb19a47cd5a4c5edc5ef57b70f081b80e21c7fb6919/_data",
+        "Destination":  "/opt/nifi/nifi-current/state",
+        "Driver":  "local",
+        "Mode":  "",
+        "RW":  true,
+        "Propagation":  ""
+    },
+    {
+        "Type":  "bind",
+        "Source":  "C:\\Users\\Daniel\\Desktop\\Uni\\PrototipoTesis\\Docker\\PrototipoTesis\\scripts",
+        "Destination":  "/opt/scripts",
+        "Mode":  "rw",
+        "RW":  true,
+        "Propagation":  "rprivate"
+    },
+    {
+        "Type":  "volume",
+        "Name":  "ae46f7d91b3ddcc586d7e64cd3ff21562be81b6c9dd26c9b1ed8a03d68694a79",
+        "Source":  "/var/lib/docker/volumes/ae46f7d91b3ddcc586d7e64cd3ff21562be81b6c9dd26c9b1ed8a03d68694a79/_data",
+        "Destination":  "/opt/nifi/nifi-current/nar_extensions",
+        "Driver":  "local",
+        "Mode":  "",
+        "RW":  true,
+        "Propagation":  ""
+    },
+    {
+        "Type":  "volume",
+        "Name":  "2055bf61092ce9a2aaa1afd31c7a54b238b2721c7ca471915bc002cc23ed6073",
+        "Source":  "/var/lib/docker/volumes/2055bf61092ce9a2aaa1afd31c7a54b238b2721c7ca471915bc002cc23ed6073/_data",
+        "Destination":  "/opt/nifi/nifi-current/python_extensions",
+        "Driver":  "local",
+        "Mode":  "",
+        "RW":  true,
+        "Propagation":  ""
+    },
+    {
+        "Type":  "bind",
+        "Source":  "C:\\Users\\Daniel\\Desktop\\Uni\\PrototipoTesis\\Docker\\PrototipoTesis\\data",
+        "Destination":  "/data",
+        "Mode":  "rw",
+        "RW":  true,
+        "Propagation":  "rprivate"
+    },
+    {
+        "Type":  "volume",
+        "Name":  "811bd8646a5b3e8820af4e5794f4ef6a76f701f723c95134f779f973f2ac5a6f",
+        "Source":  "/var/lib/docker/volumes/811bd8646a5b3e8820af4e5794f4ef6a76f701f723c95134f779f973f2ac5a6f/_data",
+        "Destination":  "/opt/nifi/nifi-current/content_repository",
+        "Driver":  "local",
+        "Mode":  "",
+        "RW":  true,
+        "Propagation":  ""
+    },
+    {
+        "Type":  "volume",
+        "Name":  "61cfd30754d613531cbea1e92bac1ca23d697b9494638433ff1cb513677f09b0",
+        "Source":  "/var/lib/docker/volumes/61cfd30754d613531cbea1e92bac1ca23d697b9494638433ff1cb513677f09b0/_data",
+        "Destination":  "/opt/nifi/nifi-current/database_repository",
+        "Driver":  "local",
+        "Mode":  "",
+        "RW":  true,
+        "Propagation":  ""
+    },
+    {
+        "Type":  "volume",
+        "Name":  "2c1185f62bd98c08965caa0f852962a5c0a244a0b1db772d0dfb933d036ae56b",
+        "Source":  "/var/lib/docker/volumes/2c1185f62bd98c08965caa0f852962a5c0a244a0b1db772d0dfb933d036ae56b/_data",
+        "Destination":  "/opt/nifi/nifi-current/flowfile_repository",
+        "Driver":  "local",
+        "Mode":  "",
+        "RW":  true,
+        "Propagation":  ""
+    },
+    {
+        "Type":  "volume",
+        "Name":  "2176f91c4387b130d2b14185661685ea302bf7fb2bbc732e9d61882fa0d41e34",
+        "Source":  "/var/lib/docker/volumes/2176f91c4387b130d2b14185661685ea302bf7fb2bbc732e9d61882fa0d41e34/_data",
+        "Destination":  "/opt/nifi/nifi-current/logs",
+        "Driver":  "local",
+        "Mode":  "",
+        "RW":  true,
+        "Propagation":  ""
+    }
+]

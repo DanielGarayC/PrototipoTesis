@@ -1,20 +1,28 @@
 services:
   nifi:
-    image: apache/nifi:2.7.2
+    build:
+      context: ./nifi-image
+    image: tesis/nifi:2.7.2-pf06
     container_name: nifi_tesis
     ports:
       - "8443:8443"
     environment:
-      - SINGLE_USER_CREDENTIALS_USERNAME=admin
-      - SINGLE_USER_CREDENTIALS_PASSWORD=XXXXXXX
+      SINGLE_USER_CREDENTIALS_USERNAME: admin
+      SINGLE_USER_CREDENTIALS_PASSWORD: NiFiPassword123
     volumes:
-      # Aquí NiFi guarda su configuración y el diseño de los Process Groups
       - ./nifi-conf:/opt/nifi/nifi-current/conf
-      # Carpetas de datos: staging, convertidos, cuarentena, por proyecto
       - ./data:/data
-      # Scripts propios
       - ./scripts:/opt/scripts
+      - nifi_content:/opt/nifi/nifi-current/content_repository
+      - nifi_flowfile:/opt/nifi/nifi-current/flowfile_repository
+      - nifi_database:/opt/nifi/nifi-current/database_repository
+      - nifi_provenance:/opt/nifi/nifi-current/provenance_repository
+      - nifi_state:/opt/nifi/nifi-current/state
+      - nifi_logs:/opt/nifi/nifi-current/logs
+      - nifi_python_extensions:/opt/nifi/nifi-current/python_extensions
+      - nifi_nar_extensions:/opt/nifi/nifi-current/nar_extensions
     restart: unless-stopped
+
   mysql:
     image: mysql:8.4
     container_name: mysql_tesis
@@ -37,6 +45,7 @@ services:
       timeout: 5s
       retries: 12
       start_period: 60s
+
   central:
     build: ./central
     container_name: modulo_central_tesis
@@ -61,3 +70,27 @@ services:
 
 volumes:
   mysql_data:
+  nifi_content:
+    external: true
+    name: 811bd8646a5b3e8820af4e5794f4ef6a76f701f723c95134f779f973f2ac5a6f
+  nifi_flowfile:
+    external: true
+    name: 2c1185f62bd98c08965caa0f852962a5c0a244a0b1db772d0dfb933d036ae56b
+  nifi_database:
+    external: true
+    name: 61cfd30754d613531cbea1e92bac1ca23d697b9494638433ff1cb513677f09b0
+  nifi_provenance:
+    external: true
+    name: e3ce6b024e002a401570263647b0d86ea7983f38b7e3937100dcfc2e261a35d3
+  nifi_state:
+    external: true
+    name: 2c81b9572290c20740f9acb19a47cd5a4c5edc5ef57b70f081b80e21c7fb6919
+  nifi_logs:
+    external: true
+    name: 2176f91c4387b130d2b14185661685ea302bf7fb2bbc732e9d61882fa0d41e34
+  nifi_python_extensions:
+    external: true
+    name: 2055bf61092ce9a2aaa1afd31c7a54b238b2721c7ca471915bc002cc23ed6073
+  nifi_nar_extensions:
+    external: true
+    name: ae46f7d91b3ddcc586d7e64cd3ff21562be81b6c9dd26c9b1ed8a03d68694a79

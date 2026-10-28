@@ -1,0 +1,8 @@
+﻿{
+    "alcance":  "Configuracion y repositorios NiFi; scripts y Compose. No incluye data, MySQL ni AWS.",
+    "container_id":  "b4f52cf640de09a667835e30e6c870fce2bebc998f50621554ec9fa4c903b9dc",
+    "estado":  "COPIA_COMPLETADA",
+    "proyecto":  "prototipotesis",
+    "fecha_respaldo":  "2026-10-27T23:03:30.9054400-05:00",
+    "image_id":  "sha256:29cc3ee4f7aca833761b3c4b009628e889151548bb3ad21078d0ad9a5bdcb250"
+}
