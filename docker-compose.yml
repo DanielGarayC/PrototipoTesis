@@ -7,8 +7,8 @@ services:
     ports:
       - "8443:8443"
     environment:
-      SINGLE_USER_CREDENTIALS_USERNAME: admin
-      SINGLE_USER_CREDENTIALS_PASSWORD: NiFiPassword123
+      SINGLE_USER_CREDENTIALS_USERNAME: ${NIFI_USERNAME}
+      SINGLE_USER_CREDENTIALS_PASSWORD: ${NIFI_PASSWORD}
     volumes:
       - ./nifi-conf:/opt/nifi/nifi-current/conf
       - ./data:/data
